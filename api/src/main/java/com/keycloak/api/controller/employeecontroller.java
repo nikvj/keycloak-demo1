@@ -15,23 +15,20 @@ import org.springframework.web.bind.annotation.RestController;
 import com.keycloak.api.Employee;
 
 
-@RestController
+@Controller
 public class employeecontroller {
 
-	@GetMapping("/employee")
-	public List<Employee> getEmployee(){
-		
-		List<Employee> employee=new ArrayList<>();
-		
-		Employee emp=new Employee();
-		emp.setId(1);
-		emp.setName("nikhil");
-		
-		employee.add(emp);
-		
+		@GetMapping(path = "/employees")
+		public String getEmployee(Model model){
+			model.addAttribute("employees", Arrays.asList("Amit","Chetan","Nikhil","Srikanth"));
+			return "employee";
+		}
 
-		return employee;
-	}
+		@GetMapping(path = "/logout")
+		public String logout(HttpServletRequest request) throws ServletException {
+			request.logout();
+			return "/";
+		}
 
 
 }
