@@ -270,7 +270,7 @@ body{
   <span class="bg-403">403</span>
   <div class="text">
     <span class="hero-text"></span>
-    <span class="msg">can't let <span>you</span> in.</span>
+    <span class="msg">Access  <span>Denied</span>!!</span>
     <span class="support">
       <span>unexpected?</span>
       <a href="/logout">Go Back</a>
