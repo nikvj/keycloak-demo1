@@ -1,22 +1,18 @@
 package com.keycloak.api.controller;
 
-import java.util.Arrays;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-public class employeecontroller {
+public class employeeController {
 
-		@GetMapping(path = "/employees")
-		public String getEmployee(Model model){
-			model.addAttribute("employees", Arrays.asList("Amit","Chetan","Nikhil","Srikanth"));
-			return "employee";
+		@GetMapping(path = "/software-engineering")
+		public String getEmployee(){
+			return "softwareEngineering";
 		}
 
 		@GetMapping(path = "/logout")
