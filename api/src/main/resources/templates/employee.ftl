@@ -1,46 +1,83 @@
 <#import "/spring.ftl" as spring>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<title>Product page</title>
-</head>
-<style>
-h1{
-   margin-top: 50px;
-    text-align: center;
-    color: red;
-}
-ul{
- margin-top: 70px;
- margin-right: 50px;
- margin-left: 50px;
- text-align: center;
- list-style: none;
- border : 1px solid black;
- background-color: gray;
- color: white;
- font-size:150%;
- 
-}
-a{
-text-decoration: none;
-}
-table, th, td {
-  border: 1px solid black;
-}
-</style>
-<body>
-    <button class="btn btn-success" style="float: right; margin-top: 20px; margin-right: 20px;"><a href="/logout" style="color: white">Logout</a></button>
-	<h1 style="margin-left: 150px;">Employee List</h1>
-	<ul>
-	<br>
-	<#list employees as employee>
-	    <li style="border-bottom-style: solid; padding-bottom: 10px; margin-right: 30px;">${employee}</li>
-	    <br>
-	</#list>
-	</ul>
-	<br>
-	
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Calfus App 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
 
+    iframe {
+        width: 100%;
+        height: 100vh; /* vh stands for viewport height */
+        border: none; /* optional: remove iframe border */
+    }
+        .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+button {
+  background: linear-gradient(90.04deg, #1d7b87 0.03%, #63bdc9 99.96%);
+  border-radius: 9px;
+  font-size: 18px;
+  color: #ffffff;
+  padding: 10px 42px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar {
+    height: 60px;
+    background-color: #f5f5f5;
+    position: relative;
+}
+
+.logo img {
+    /* Add any specific styles for the logo here */
+}
+
+.menu-icon {
+    display: none; /* To be displayed when implementing hamburger menu for smaller screens */
+}
+
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">
+
+        </div>
+        <div class="nav-elements" id="logoutButton">
+            <button>Logout</button>
+        </div>
+    </div>
+</nav>
+<div>
+    <iframe src="https://www.calfus.com/software-engineering"></iframe>
+</div>
+
+<div>
+
+</div>
+
+<script>
+    const loginButton = document.getElementById('logoutButton');
+           loginButton.onclick = function() {
+               window.location.href = "/logout";
+           };
+</script>
 </body>
 </html>
